@@ -2,53 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Library Room Booking - Login</title>
+    <title>UPM Library Room Booking System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="top-header">
-    <div class="left-header">
-        <img src="upm-logo.png" alt="UPM Logo">
+<div class="main-layout">
+
+    <!-- LEFT SIDE (WHITE) -->
+    <div class="left-panel">
         <h1>UPM Library Room Booking System</h1>
+        <p class="subtitle">Student Room Reservation Portal</p>
+
+        <label>Username</label>
+        <input type="text" id="username">
+
+        <label>Password</label>
+        <input type="password" id="password">
+
+        <button onclick="login()">Login</button>
+
+        <p id="error"></p>
     </div>
 
-    <div class="right-header">
+    <!-- RIGHT SIDE (RED) -->
+    <div class="right-panel">
+        <img src="upm-logo.png" alt="UPM Logo">
+        <h2>Universiti Putra Malaysia</h2>
         <p>Faculty of Computer Science & IT</p>
         <p>Minimum 3 students per booking</p>
     </div>
-</header>
 
-
-<div class="container">
-    <h2>Login</h2>
-
-    <label>Username</label>
-    <input type="text" id="username" placeholder="Enter username">
-
-    <label>Password</label>
-    <input type="password" id="password" placeholder="Enter password">
-
-    <button onclick="login()">Login</button>
-
-    <p id="error" style="color:red; text-align:center;"></p>
 </div>
 
 <script>
-    function login() {
-        var user = document.getElementById("username").value;
-        var pass = document.getElementById("password").value;
+function login() {
+    let u = document.getElementById("username").value;
+    let p = document.getElementById("password").value;
+    let e = document.getElementById("error");
 
-        // SPECIFIC login credentials
-        if (user === "student" && pass === "1234") {
-            window.location.href = "dashboard.html";
-        } else {
-            document.getElementById("error").innerText =
-                "Invalid username or password";
-        }
+    if (u === "student" && p === "1234") {
+        window.location.href = "dashboard.html";
+    } else {
+        e.innerText = "Invalid username or password";
     }
+}
 </script>
 
 </body>
 </html>
-
