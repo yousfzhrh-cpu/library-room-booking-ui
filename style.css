@@ -138,3 +138,12 @@ a {
     from { transform: translateY(40px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
+/* ===== DASHBOARD COLUMN ALIGNMENT FIX ===== */
+
+/* Capacity column (numbers 4, 6, 8) */
+table td:nth-child(2),
+table th:nth-child(2) {
+    padding-left: 25px;   /* move numbers forward */
+    text-align: left;     /* align neatly */
+}
