@@ -7,63 +7,65 @@
 </head>
 <body>
 
-<header class="top-header">
-    <div class="left-header">
-        <img src="upm-logo.png" alt="UPM Logo">
-        <h1>UPM Library Room Booking System</h1>
+<div class="main-layout">
+
+    <!-- LEFT SIDE -->
+    <div class="left-panel">
+        <h1>Book a Library Room</h1>
+
+        <label>Student 1</label>
+        <input type="text" id="s1">
+
+        <label>Student 2</label>
+        <input type="text" id="s2">
+
+        <label>Student 3</label>
+        <input type="text" id="s3">
+
+        <label>Room</label>
+        <select>
+            <option>Room A</option>
+            <option>Room B</option>
+            <option>Room C</option>
+        </select>
+
+        <label>Date</label>
+        <input type="date">
+
+        <label>Time</label>
+        <input type="time">
+
+        <button onclick="validateBooking()">Confirm Booking</button>
+
+        <p id="bookingMsg"></p>
+
+        <a href="dashboard.html">Back to Dashboard</a>
     </div>
 
-    <div class="right-header">
-        <p>Faculty of Computer Science & IT</p>
-        <p>Minimum 3 students required</p>
+    <!-- RIGHT SIDE -->
+    <div class="right-panel">
+        <img src="upm-logo.png">
+        <h2>Booking Policy</h2>
+        <p>• Minimum 3 students</p>
+        <p>• Valid student names required</p>
+        <p>• UI Prototype Only</p>
     </div>
-</header>
 
-<div class="container">
-    <h2>Room Booking Form</h2>
-
-    <label>Student 1</label>
-    <input type="text" id="student1" placeholder="Enter name">
-
-    <label>Student 2</label>
-    <input type="text" id="student2" placeholder="Enter name">
-
-    <label>Student 3</label>
-    <input type="text" id="student3" placeholder="Enter name">
-
-    <label>Room</label>
-    <select>
-        <option>Room A</option>
-        <option>Room B</option>
-        <option>Room C</option>
-    </select>
-
-    <label>Date</label>
-    <input type="date">
-
-    <label>Time</label>
-    <input type="time">
-
-    <button onclick="validateBooking()">Confirm Booking</button>
-
-    <p id="bookingMsg"></p>
-
-    <a href="dashboard.html">Back to Dashboard</a>
 </div>
 
 <script>
 function validateBooking() {
-    let s1 = document.getElementById("student1").value.trim();
-    let s2 = document.getElementById("student2").value.trim();
-    let s3 = document.getElementById("student3").value.trim();
+    let s1 = s1 = document.getElementById("s1").value.trim();
+    let s2 = document.getElementById("s2").value.trim();
+    let s3 = document.getElementById("s3").value.trim();
     let msg = document.getElementById("bookingMsg");
 
     if (s1 === "" || s2 === "" || s3 === "") {
         msg.style.color = "red";
-        msg.innerText = "❌ Invalid booking: Please enter at least 3 student names.";
+        msg.innerText = "❌ Invalid booking: 3 students required.";
     } else {
         msg.style.color = "green";
-        msg.innerText = "✅ Booking successful. Room has been reserved.";
+        msg.innerText = "✅ Booking successful.";
     }
 }
 </script>
