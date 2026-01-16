@@ -15,14 +15,21 @@
 
     <div class="right-header">
         <p>Faculty of Computer Science & IT</p>
-        <p>Minimum 3 students per booking</p>
+        <p>Minimum 3 students required</p>
     </div>
 </header>
 
-
 <div class="container">
-    <label>Student Name</label>
-    <input type="text">
+    <h2>Room Booking Form</h2>
+
+    <label>Student 1</label>
+    <input type="text" id="student1" placeholder="Enter name">
+
+    <label>Student 2</label>
+    <input type="text" id="student2" placeholder="Enter name">
+
+    <label>Student 3</label>
+    <input type="text" id="student3" placeholder="Enter name">
 
     <label>Room</label>
     <select>
@@ -37,10 +44,29 @@
     <label>Time</label>
     <input type="time">
 
-    <button>Confirm Booking</button>
+    <button onclick="validateBooking()">Confirm Booking</button>
+
+    <p id="bookingMsg"></p>
+
     <a href="dashboard.html">Back to Dashboard</a>
 </div>
 
+<script>
+function validateBooking() {
+    let s1 = document.getElementById("student1").value.trim();
+    let s2 = document.getElementById("student2").value.trim();
+    let s3 = document.getElementById("student3").value.trim();
+    let msg = document.getElementById("bookingMsg");
+
+    if (s1 === "" || s2 === "" || s3 === "") {
+        msg.style.color = "red";
+        msg.innerText = "❌ Invalid booking: Please enter at least 3 student names.";
+    } else {
+        msg.style.color = "green";
+        msg.innerText = "✅ Booking successful. Room has been reserved.";
+    }
+}
+</script>
+
 </body>
 </html>
-
