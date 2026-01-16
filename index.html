@@ -7,32 +7,28 @@
 </head>
 <body>
 
-<div class="main-layout">
-
-    <!-- LEFT SIDE (WHITE) -->
-    <div class="left-panel">
-        <h1>UPM Library Room Booking System</h1>
-        <p class="subtitle">Student Room Reservation Portal</p>
-
-        <label>Username</label>
-        <input type="text" id="username">
-
-        <label>Password</label>
-        <input type="password" id="password">
-
-        <button onclick="login()">Login</button>
-
-        <p id="error"></p>
-    </div>
-
-    <!-- RIGHT SIDE (RED) -->
-    <div class="right-panel">
+<header class="top-header">
+    <div class="left-header">
         <img src="upm-logo.png" alt="UPM Logo">
-        <h2>Universiti Putra Malaysia</h2>
-        <p>Faculty of Computer Science & IT</p>
-        <p>Minimum 3 students per booking</p>
+        <h1>UPM Library Room Booking System</h1>
     </div>
+    <div class="right-header">
+        <p>Faculty of Computer Science & IT</p>
+    </div>
+</header>
 
+<div class="container">
+    <h2>Login</h2>
+
+    <label>Username</label>
+    <input type="text" id="username">
+
+    <label>Password</label>
+    <input type="password" id="password">
+
+    <button onclick="login()">Login</button>
+
+    <p id="error"></p>
 </div>
 
 <script>
@@ -44,6 +40,7 @@ function login() {
     if (u === "student" && p === "1234") {
         window.location.href = "dashboard.html";
     } else {
+        e.style.color = "red";
         e.innerText = "Invalid username or password";
     }
 }
