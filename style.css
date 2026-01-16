@@ -1,49 +1,46 @@
-/* RESET */
 * {
     box-sizing: border-box;
-}
-
-/* PAGE LOAD ANIMATION */
-body {
     font-family: Arial, sans-serif;
-    background: #f4f6f5;
-    margin: 0;
-    animation: fadeIn 0.8s ease-in;
 }
 
-/* HEADER */
-header {
+body {
+    margin: 0;
+}
+
+/* MAIN LAYOUT */
+.main-layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT PANEL */
+.left-panel {
+    width: 55%;
+    background: white;
+    padding: 80px;
+}
+
+.left-panel h1 {
+    color: #B11226;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+    width: 45%;
     background: #B11226;
     color: white;
-    padding: 15px;
+    padding: 80px;
     text-align: center;
-    animation: slideDown 0.7s ease-out;
 }
 
-header img {
-    width: 80px;
-    margin-bottom: 8px;
-}
-
-/* CONTAINER (CARD EFFECT) */
-.container {
-    background: white;
-    width: 360px;
-    margin: 90px auto;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    animation: riseUp 0.9s ease;
-}
-
-/* TEXT */
-h1, h2 {
-    margin: 5px 0;
-}
-
-h2 {
-    text-align: center;
-    color: #B11226;
+.right-panel img {
+    width: 180px;
+    margin-bottom: 20px;
 }
 
 /* FORM */
@@ -56,134 +53,33 @@ label {
 input, select {
     width: 100%;
     padding: 10px;
-    margin-top: 6px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    transition: 0.3s;
+    margin-top: 5px;
 }
 
-/* INPUT FOCUS EFFECT */
-input:focus, select:focus {
-    border-color: #B11226;
-    box-shadow: 0 0 5px rgba(177,18,38,0.4);
-    outline: none;
-}
-
-/* BUTTON */
 button {
     width: 100%;
     background: #B11226;
     color: white;
     padding: 12px;
     border: none;
-    border-radius: 6px;
-    margin-top: 22px;
-    font-size: 15px;
+    margin-top: 25px;
     cursor: pointer;
-    transition: transform 0.15s, background 0.3s;
+    font-size: 15px;
 }
 
-/* BUTTON HOVER */
 button:hover {
     background: #8e0f1e;
-    transform: translateY(-2px);
 }
 
-/* BUTTON CLICK */
-button:active {
-    transform: scale(0.97);
-}
-
-/* LINKS */
 a {
     display: block;
-    text-align: center;
-    margin-top: 15px;
+    margin-top: 20px;
     color: #B11226;
     font-weight: bold;
     text-decoration: none;
 }
 
-/* TABLE */
-table {
-    width: 80%;
-    margin: 30px auto;
-    border-collapse: collapse;
-    animation: fadeIn 1s ease;
+#error, #bookingMsg {
+    margin-top: 15px;
+    font-weight: bold;
 }
-
-th {
-    background: #B11226;
-    color: white;
-}
-
-td, th {
-    padding: 12px;
-    border: 1px solid #ccc;
-    text-align: center;
-}
-
-/* ERROR MESSAGE ANIMATION */
-#error {
-    animation: shake 0.3s;
-}
-
-/* ANIMATIONS */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideDown {
-    from { transform: translateY(-40px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes riseUp {
-    from { transform: translateY(40px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-4px); }
-    50% { transform: translateX(4px); }
-    75% { transform: translateX(-4px); }
-    100% { transform: translateX(0); }
-}
-
-/* ===== HEADER LAYOUT FIX ===== */
-.top-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #B11226;
-    color: white;
-    padding: 15px 30px;
-}
-
-.left-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.left-header img {
-    width: 65px;
-}
-
-.left-header h1 {
-    font-size: 20px;
-    margin: 0;
-}
-
-.right-header {
-    text-align: right;
-    font-size: 13px;
-    opacity: 0.9;
-}
-
-.right-header p {
-    margin: 2px 0;
-}
-
