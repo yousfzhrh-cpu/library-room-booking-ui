@@ -1,29 +1,44 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+}
+
+/* PAGE LOAD ANIMATION */
 body {
     font-family: Arial, sans-serif;
     background: #f4f6f5;
     margin: 0;
+    animation: fadeIn 0.8s ease-in;
 }
 
+/* HEADER */
 header {
     background: #B11226;
     color: white;
     padding: 15px;
     text-align: center;
+    animation: slideDown 0.7s ease-out;
 }
 
 header img {
     width: 80px;
-    display: block;
-    margin: 0 auto 10px;
+    margin-bottom: 8px;
 }
 
+/* CONTAINER (CARD EFFECT) */
 .container {
     background: white;
-    width: 350px;
-    margin: 80px auto;
+    width: 360px;
+    margin: 90px auto;
     padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    animation: riseUp 0.9s ease;
+}
+
+/* TEXT */
+h1, h2 {
+    margin: 5px 0;
 }
 
 h2 {
@@ -31,44 +46,70 @@ h2 {
     color: #B11226;
 }
 
+/* FORM */
 label {
     display: block;
     margin-top: 15px;
     font-weight: bold;
 }
 
-input, select, button {
+input, select {
     width: 100%;
     padding: 10px;
-    margin-top: 5px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
 }
 
+/* INPUT FOCUS EFFECT */
+input:focus, select:focus {
+    border-color: #B11226;
+    box-shadow: 0 0 5px rgba(177,18,38,0.4);
+    outline: none;
+}
+
+/* BUTTON */
 button {
+    width: 100%;
     background: #B11226;
     color: white;
+    padding: 12px;
     border: none;
-    margin-top: 20px;
-    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 22px;
     font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.3s;
 }
 
+/* BUTTON HOVER */
 button:hover {
     background: #8e0f1e;
+    transform: translateY(-2px);
 }
 
+/* BUTTON CLICK */
+button:active {
+    transform: scale(0.97);
+}
+
+/* LINKS */
 a {
     display: block;
     text-align: center;
     margin-top: 15px;
-    text-decoration: none;
     color: #B11226;
     font-weight: bold;
+    text-decoration: none;
 }
 
+/* TABLE */
 table {
     width: 80%;
     margin: 30px auto;
     border-collapse: collapse;
+    animation: fadeIn 1s ease;
 }
 
 th {
@@ -77,7 +118,36 @@ th {
 }
 
 td, th {
-    border: 1px solid #ccc;
     padding: 12px;
+    border: 1px solid #ccc;
     text-align: center;
+}
+
+/* ERROR MESSAGE ANIMATION */
+#error {
+    animation: shake 0.3s;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes riseUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
 }
