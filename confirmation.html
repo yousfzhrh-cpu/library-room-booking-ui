@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+    <div class="left-header">
+        <img src="upm-logo.png" alt="UPM Logo">
+        <h1>UPM Library Room Booking System</h1>
+    </div>
+    <div class="right-header">
+        <p>Booking Confirmation</p>
+    </div>
+</header>
+
+<div class="container">
+    <h2>Booking Receipt</h2>
+
+    <p><strong>Room:</strong> <span id="room"></span></p>
+    <p><strong>Date:</strong> <span id="date"></span></p>
+    <p><strong>Time:</strong> <span id="time"></span></p>
+
+    <h3>Students</h3>
+    <ul>
+        <li id="s1"></li>
+        <li id="s2"></li>
+        <li id="s3"></li>
+    </ul>
+
+    <a href="dashboard.html">Back to Dashboard</a>
+</div>
+
+<script>
+document.getElementById("room").innerText = sessionStorage.getItem("room");
+document.getElementById("date").innerText = sessionStorage.getItem("date");
+document.getElementById("time").innerText =
+    sessionStorage.getItem("startTime") + " - " + sessionStorage.getItem("endTime");
+
+document.getElementById("s1").innerText = sessionStorage.getItem("student1");
+document.getElementById("s2").innerText = sessionStorage.getItem("student2");
+document.getElementById("s3").innerText = sessionStorage.getItem("student3");
+</script>
+
+</body>
+</html>
