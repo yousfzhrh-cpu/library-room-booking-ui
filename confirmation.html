@@ -18,7 +18,7 @@
 </header>
 
 <div class="container">
-    <h2>Booking Confirmed</h2>
+    <h2>Booking Receipt</h2>
 
     <p><strong>Room:</strong> <span id="room"></span></p>
     <p><strong>Date:</strong> <span id="date"></span></p>
@@ -31,10 +31,15 @@
         <li id="s3"></li>
     </ul>
 
+    <button onclick="cancelBooking()" style="background:#777; margin-top:20px;">
+        Cancel Booking
+    </button>
+
     <a href="dashboard.html">Back to Dashboard</a>
 </div>
 
 <script>
+// Load booking details
 document.getElementById("room").innerText = sessionStorage.getItem("room");
 document.getElementById("date").innerText = sessionStorage.getItem("date");
 document.getElementById("time").innerText =
@@ -43,6 +48,15 @@ document.getElementById("time").innerText =
 document.getElementById("s1").innerText = sessionStorage.getItem("student1");
 document.getElementById("s2").innerText = sessionStorage.getItem("student2");
 document.getElementById("s3").innerText = sessionStorage.getItem("student3");
+
+// Cancel booking function
+function cancelBooking() {
+    if (confirm("Are you sure you want to cancel this booking?")) {
+        sessionStorage.clear(); // remove booking data
+        alert("Booking has been cancelled.");
+        window.location.href = "dashboard.html";
+    }
+}
 </script>
 
 </body>
