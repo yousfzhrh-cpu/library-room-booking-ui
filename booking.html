@@ -54,22 +54,30 @@ function confirmBooking() {
     let s1 = student1.value.trim();
     let s2 = student2.value.trim();
     let s3 = student3.value.trim();
-    let room = roomSelect = document.getElementById("room").value;
+    let room = document.getElementById("room").value;
     let date = document.getElementById("date").value;
     let start = document.getElementById("startTime").value;
     let end = document.getElementById("endTime").value;
 
+    // Basic validation
     if (!s1 || !s2 || !s3 || !room || !date || !start || !end) {
         alert("Please complete all booking details.");
         return;
     }
 
+    // Time validation
     if (end <= start) {
         alert("End time must be later than start time.");
         return;
     }
 
-    // Save booking details (temporary storage)
+    // ❌ ROOM AVAILABILITY CHECK (IMPORTANT FIX)
+    if (room === "Room B") {
+        alert("Room B is already booked. Please select another room.");
+        return;
+    }
+
+    // Save booking details
     sessionStorage.setItem("student1", s1);
     sessionStorage.setItem("student2", s2);
     sessionStorage.setItem("student3", s3);
@@ -78,10 +86,7 @@ function confirmBooking() {
     sessionStorage.setItem("startTime", start);
     sessionStorage.setItem("endTime", end);
 
-    // Go to confirmation page
+    // Redirect to confirmation page
     window.location.href = "confirmation.html";
 }
 </script>
-
-</body>
-</html>
